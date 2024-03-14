@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var correctWordLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var treeImageView: UIImageView!
-    @IBOutlet var letterButtons: [UIButton]!
+    @IBOutlet weak var letterButtons: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,18 +40,14 @@ class ViewController: UIViewController {
     if !listOfWords.isEmpty {
         let newWord = listOfWords.removeFirst()
         currentgame = Game(word: newWord,incorrectMovesRemaining: incorrectMovesAllowed, guessedLetters: [])
-        enableLetterButtons(true)
+        //enableLetterButtons(true)
         updateUI()
     }else{
-        enableLetterButtons(false)
+        //enableLetterButtons(false)
     }
     }
     
-    func enableLetterButtons(_ enable: Bool){
-        for button in letterButtons {
-            button.isEnabled = enable
-        }
-    }
+    
     
     func updateUI(){
         var letters = [String]()
