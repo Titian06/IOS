@@ -178,7 +178,7 @@ class QuestionViewController: UIViewController {
         if questionIndex < questions.count {
             updateUI()
         }else{
-            performSegue(withIdentifier: "ResultSegue", sender: nil)
+            performSegue(withIdentifier: "ResultsSegue", sender: nil)
             
         }
     }
